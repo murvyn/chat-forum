@@ -3,6 +3,7 @@ import { Suspense, lazy } from "react";
 import ProtectRoute from "./components/ProtectRoute";
 import ErrorBoundary from "./components/ErrorBoundary";
 import ErrorFallback from "./components/ErrorFallBack";
+import { Spinner } from "./components/spinner";
 
 const SignIn = lazy(() => import("./pages/SignIn"));
 const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
@@ -12,7 +13,13 @@ const HomePage = lazy(() => import("./pages/HomePage"));
 function App() {
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className="w-full h-screen flex items-center justify-center">
+            <Spinner />
+          </div>
+        }
+      >
         <Routes>
           <Route path="/auth/sign-in" element={<SignIn />} />
           <Route path="/auth/forgot-password" element={<ForgotPassword />} />
