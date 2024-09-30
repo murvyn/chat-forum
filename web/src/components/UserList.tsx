@@ -15,7 +15,6 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
 } from "./ui/dialog";
 import {
   Form,
@@ -121,9 +120,14 @@ export function UserList({ users, chatId, isOwner }: UserListProps) {
       }
     },
     onSuccess: () => {
+      toast({
+        title: "Success",
+        description: "Member has been added",
+        duration: 2000,
+      });
       queryClient.invalidateQueries({ queryKey: ["userChats"] });
       queryClient.invalidateQueries({ queryKey: ["users"] });
-      form.reset();
+      form.reset({ users: [] });
     },
     onError: (error) => {
       console.error(error);
@@ -210,11 +214,7 @@ export function UserList({ users, chatId, isOwner }: UserListProps) {
                   />
                   <DialogFooter>
                     <Button type="submit">
-                      {addMemberMutation.isSuccess ? (
-                        <DialogClose>Done</DialogClose>
-                      ) : (
-                        <>{addMemberMutation.isPending ? <Spinner /> : "Add"}</>
-                      )}
+                      {addMemberMutation.isPending ? <Spinner /> : "Add"}
                     </Button>
                   </DialogFooter>
                 </form>
@@ -235,7 +235,6 @@ export function UserList({ users, chatId, isOwner }: UserListProps) {
                 >
                   <div className="relative flex space-x-4">
                     <Avatar
-                      //   onClick={() => navigate(`/direct-messages/${user._id}`)}
                       className={`w-12 h-12 ${
                         user.role !== "student"
                           ? "border-solid border-4 border-primary"

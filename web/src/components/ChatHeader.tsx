@@ -42,11 +42,9 @@ const ChatHeader = ({
                 <span className="font-medium max-sm:w-[8.5rem] truncate">
                   {`${selectedUser?.firstName} ${selectedUser?.lastName}`}
                 </span>
-                {isOnline && (
-                  <span className="text-xs">
-                    {isOnline ? "Online" : "Offline"}
-                  </span>
-                )}
+                <span className="text-xs">
+                  {isOnline ? "Online" : "Offline"}
+                </span>
               </div>
             </div>
           </>
@@ -62,7 +60,6 @@ const ChatHeader = ({
                 <span className="font-medium max-sm:w-[8.5rem] truncate">
                   {channel?.name}
                 </span>
-                <span className="text-xs">Active 2 mins ago</span>
               </div>
             </div>
           </>

@@ -247,7 +247,7 @@ export default function ChatTopBar({ type }: { type: "direct" | "course" }) {
     selectedUser?.courses.some((course2) => course._id === course2._id)
   );
   const isOnline = onlineUsers.some(
-    (user) => user.userId === selectedUser?._id
+    (user: {userId: string}) => user.userId === selectedUser?._id
   );
 
   const toggleCard = () => {

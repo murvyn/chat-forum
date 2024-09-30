@@ -43,8 +43,8 @@ export function Menu({ isOpen }: MenuProps) {
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  const sortedUserGroupChats = useSortedChats(userGroupChats || []);
   const sortedUserChats = useSortedChats(userChats || []);
+  const sortedUserGroupChats = useSortedChats(userGroupChats || []);
 
   const createChat = useMutation({
     mutationFn: async (secondId: string) => {

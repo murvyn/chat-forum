@@ -352,17 +352,17 @@ export const getMessages = async (req: Request, res: Response) => {
   const { chatId } = req.params;
   const { latest } = req.query;
 
-  const redis = await redisClient();
-  const cachedMessages = await redis.get(`chat:${chatId}`);
-  const messages = cachedMessages ? JSON.parse(cachedMessages) : null;
+  // const redis = await redisClient();
+  // const cachedMessages = await redis.get(`chat:${chatId}`);
+  // const messages = cachedMessages ? JSON.parse(cachedMessages) : null;
 
-  if (messages && Array.isArray(messages)) {
-    return res
-      .status(200)
-      .json({ message: "Messages successfully fetched", messages });
-  } else {
-    logger.error("Cached messages are not in the expected format");
-  }
+  // if (messages && Array.isArray(messages)) {
+  //   return res
+  //     .status(200)
+  //     .json({ message: "Messages successfully fetched", messages });
+  // } else {
+  //   logger.error("Cached messages are not in the expected format");
+  // }
 
   try {
     if (latest === "true") {
