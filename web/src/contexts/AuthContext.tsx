@@ -55,7 +55,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           duration: 2000,
           variant: "destructive",
         });
-        throw new Error(response.message);
+        return
       }
       const { token } = response;
       if (token) {

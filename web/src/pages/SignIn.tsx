@@ -60,10 +60,6 @@ const SignIn = () => {
       });
       navigate("/direct-messages");
     } catch (error) {
-      toast({
-        description: "Something went wrong, try again",
-        variant: "destructive",
-      });
       console.log(error);
     } finally {
       setLoading(false);
