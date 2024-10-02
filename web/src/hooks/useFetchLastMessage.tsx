@@ -4,7 +4,6 @@ import { UserChatWithId, UserGroupChatWithId } from "@/types";
 import { baseUrl, getRequest } from "@/utils/services";
 import { useQueries } from "@tanstack/react-query";
 import { useEffect } from "react";
-import CryptoJS from "crypto-js";
 
 const fetchLatestMessage = async (chatId: string, token: string) => {
   try {
@@ -16,10 +15,7 @@ const fetchLatestMessage = async (chatId: string, token: string) => {
       throw new Error("No messages found.");
     }
 
-    const secretKey = import.meta.env.VITE_SECRET_KEY;
-    const bytes = CryptoJS.AES.decrypt(response.messages.text, secretKey);
-    const originalText = bytes.toString(CryptoJS.enc.Utf8);
-    return { ...response.messages, text: originalText };
+    return response.messages
   } catch (error) {
     console.error(`Error fetching latest message for chat ${chatId}:`, error);
     return null;

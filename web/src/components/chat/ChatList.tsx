@@ -14,7 +14,7 @@ import {
   ChatBubbleMessage,
   ChatBubbleTimestamp,
 } from "./chat-bubble";
-import { FaLock } from "react-icons/fa";
+// import { FaLock } from "react-icons/fa";
 
 const getMessageVariant = (isUser: boolean) => (isUser ? "sent" : "received");
 
@@ -76,12 +76,12 @@ export function ChatList() {
           ref={messagesContainerRef}
           className="w-full overflow-y-auto overflow-x-hidden h-full flex flex-col"
         >
-          <div className=" flex justify-center mt-3 ">
+          {/* <div className=" flex justify-center mt-3 ">
             <div className="bg-green-200 flex text-xs text-muted-foreground rounded-md p-2 items-center space-x-1">
               <FaLock />
               <p>Messages are end-to-end encrypted</p>
             </div>
-          </div>
+          </div> */}
           {messages && messages.length === 0 ? (
             <div className="flex items-center justify-center h-full">
               No conversation

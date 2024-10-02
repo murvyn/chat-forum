@@ -80,16 +80,15 @@ export const getChats = async (req: Request, res: Response) => {
   const userId = req.user?._id;
   const redis = await redisClient();
   const cachedChats = await redis.get(`chats:${userId}`);
-  const chats = cachedChats ? JSON.parse(cachedChats) : null
+  const chats = cachedChats ? JSON.parse(cachedChats) : null;
 
-    if (chats && Array.isArray(chats) && chats.length !== 0) {
-      return res
-        .status(200)
-        .json({ message: "Chats successfully fetched", chats });
-    } else {
-      logger.error("Cached chats are not in the expected format");
-    }
-  
+  if (chats && Array.isArray(chats) && chats.length !== 0) {
+    return res
+      .status(200)
+      .json({ message: "Chats successfully fetched", chats });
+  } else {
+    logger.error("Cached chats are not in the expected format");
+  }
 
   try {
     const chats = await Chat.find({ members: req.user?._id });
@@ -259,9 +258,9 @@ export const addMemberToGroupChat = async (req: Request, res: Response) => {
   try {
     const { chatId, memberId } = req.body;
     const userId = req.user?._id;
-    
+
     const chat = await Chat.findById(chatId);
-    console.log(chat)
+    console.log(chat);
     if (!chat) {
       return res.status(404).json({ error: "Group chat not found" });
     }
@@ -290,7 +289,6 @@ export const addMemberToGroupChat = async (req: Request, res: Response) => {
 
     chat.members.push(...newMembers);
     await chat.save();
-    
 
     await cacheData(`chats:${userId}`, JSON.stringify(chat));
 
@@ -352,18 +350,6 @@ export const getMessages = async (req: Request, res: Response) => {
   const { chatId } = req.params;
   const { latest } = req.query;
 
-  // const redis = await redisClient();
-  // const cachedMessages = await redis.get(`chat:${chatId}`);
-  // const messages = cachedMessages ? JSON.parse(cachedMessages) : null;
-
-  // if (messages && Array.isArray(messages)) {
-  //   return res
-  //     .status(200)
-  //     .json({ message: "Messages successfully fetched", messages });
-  // } else {
-  //   logger.error("Cached messages are not in the expected format");
-  // }
-
   try {
     if (latest === "true") {
       const messages = await Message.findOne({ chatId })
@@ -375,6 +361,18 @@ export const getMessages = async (req: Request, res: Response) => {
       return res
         .status(200)
         .json({ message: "Messages successfully fetched", messages });
+    }
+
+    const redis = await redisClient();
+    const cachedMessages = await redis.get(`chat:${chatId}`);
+    const cache = cachedMessages ? JSON.parse(cachedMessages) : null;
+
+    if (cache && Array.isArray(cache)) {
+      return res
+        .status(200)
+        .json({ message: "Messages successfully fetched", messages: cache });
+    } else {
+      logger.error("Cached messages are not in the expected format");
     }
 
     const messages = await Message.find({ chatId });

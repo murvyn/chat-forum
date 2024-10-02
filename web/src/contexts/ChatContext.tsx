@@ -26,7 +26,6 @@ import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import groupNotificationSound from "@/assets/mixkit-cooking-bell-ding-1791.wav";
 import notificationSound from "@/assets/mixkit-cowbell-sharp-hit-1743.wav";
-import CryptoJS from "crypto-js";
 
 interface ChatContextProps {
   userChats: UserChatWithId[] | null;
@@ -169,7 +168,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   const { user, token } = useAuth();
   const { toast, dismiss } = useToast();
   const navigate = useNavigate();
-  const secretKey = import.meta.env.VITE_SECRET_KEY;
+
 
   useEffect(() => {
     localStorage.setItem("chatId", chatId);
@@ -228,14 +227,10 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
     if (socket) {
       socket?.on("getMessage", (message) => {
         if (chatId === message.chatId && message.sender === recipientId) {
-          console.log(message)
-          const bytes = CryptoJS.AES.decrypt(message.text, secretKey);
-          const originalText = bytes.toString(CryptoJS.enc.Utf8);
-          const parsedMessage: Message = { ...message, text: originalText };
           setMessages((prevMessages) => {
             return prevMessages
-              ? [...prevMessages, parsedMessage]
-              : [parsedMessage];
+              ? [...prevMessages, message]
+              : [message];
           });
         }
       });
@@ -263,15 +258,13 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
 
       socket?.on("getNotifications", async (response) => {
         if (response.chatId !== chatId) {
-          const bytes = CryptoJS.AES.decrypt(response.message, secretKey);
-          const originalText = bytes.toString(CryptoJS.enc.Utf8);
           const audio = new Audio(notificationSound);
           audio.play().catch((error) => {
             console.error("Error playing notification sound:", error);
           });
           toast({
             title: "New message",
-            description: `Message: ${originalText}`,
+            description: `Message: ${response.text}`,
             duration: 1000,
           });
         }
@@ -284,26 +277,21 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
 
       socket.on("getGroupMessage", (message) => {
         if (chatId === message.chatId && user?._id !== message.sender) {
-          const bytes = CryptoJS.AES.decrypt(message.text, secretKey);
-          const originalText = bytes.toString(CryptoJS.enc.Utf8);
-          const parsedMessage: Message = { ...message, text: originalText };
           setMessages((prevMessages) =>
-            prevMessages ? [...prevMessages, parsedMessage] : [parsedMessage]
+            prevMessages ? [...prevMessages, message] : [message]
           );
         }
       });
 
       socket?.on("getGroupNotifications", (response) => {
         if (response.chatId !== chatId) {
-          const bytes = CryptoJS.AES.decrypt(response.message, secretKey);
-          const originalText = bytes.toString(CryptoJS.enc.Utf8);
           const audio = new Audio(groupNotificationSound);
           audio.play().catch((error) => {
             console.error("Error playing notification sound:", error);
           });
           toast({
             title: "New message",
-            description: `Message: ${originalText}`,
+            description: `Message: ${response.text}`,
             duration: 1000,
             action: (
               <Button
@@ -423,11 +411,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
         token
       );
 
-      return response?.messages?.map((message: Message) => {
-        const bytes = CryptoJS.AES.decrypt(message.text, secretKey);
-        const originalText = bytes.toString(CryptoJS.enc.Utf8);
-        return { ...message, text: originalText };
-      });
+      return response?.messages
     }
   };
 
@@ -545,15 +529,10 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       setMessages((prev: Message[] | null) =>
         prev ? [...prev, tempMessage] : [tempMessage]
       );
-      const encryptedMessage = CryptoJS.AES.encrypt(
-        textMessage,
-        secretKey
-      ).toString();
-      const modifiedMessage = { ...tempMessage, text: encryptedMessage };
       const response = await postRequest(
         `${baseUrl}/message/send-message`,
         token,
-        JSON.stringify(modifiedMessage)
+        JSON.stringify(tempMessage)
       );
       if (response.error) {
         toast({
@@ -567,8 +546,6 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       return response.response;
     },
     onSuccess: (newText) => {
-      const bytes = CryptoJS.AES.decrypt(newText.text, secretKey);
-      const originalText = bytes.toString(CryptoJS.enc.Utf8);
       const newMessage = {
         _id: newText._id,
         chatId: newText.chatId,
@@ -583,11 +560,11 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
         ...newMessage,
         recipientId,
       });
-      setNewMessage({...newMessage, text: originalText});
+      setNewMessage(newMessage);
       setMessages((prev: Message[] | null) =>
         prev
-          ? prev.map((msg) => (msg._id === newText._id ? {...newMessage, text: originalText} : msg))
-          : [{...newMessage, text: originalText}]
+          ? prev.map((msg) => (msg._id === newText._id ? newMessage : msg))
+          : [newMessage]
       );
     },
     onError: (error, variables) => {
@@ -633,14 +610,10 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
 
   const retrySendMessageMutation = useMutation({
     mutationFn: async (message: Message) => {
-      const encryptedMessage = CryptoJS.AES.encrypt(
-        message.text,
-        secretKey
-      ).toString();
       const response = await postRequest(
         `${baseUrl}/message/send-message`,
         token,
-        JSON.stringify({...message, text: encryptedMessage})
+        JSON.stringify(message)
       );
       if (response.error) {
         toast({
@@ -667,9 +640,6 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
     },
     onSuccess: (response) => {
       const newText = response;
-      const bytes = CryptoJS.AES.decrypt(newText.text, secretKey);
-      const originalText = bytes.toString(CryptoJS.enc.Utf8);
-      // const parsedMessage: Message = {...message, text: originalText}
       const newMessage = {
         chatId: newText.chatId,
         sender: newText.sender,
@@ -678,18 +648,17 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
         courseId: newText.course,
         type: newText.type,
       };
-      console.log(newMessage);
       if (socket) {
         socket.emit("sendMessage", {
           ...newMessage,
           recipientId,
         });
       }
-      setNewMessage({...newMessage, text: originalText});
+      setNewMessage(newMessage);
       setMessages((prev: Message[] | null) =>
         prev
-          ? prev.map((msg) => (msg._id === newText._id ? {...newMessage, text: originalText} : msg))
-          : [{...newMessage, text: originalText}]
+          ? prev.map((msg) => (msg._id === newText._id ? newMessage : msg))
+          : [newMessage]
       );
       queryClient.invalidateQueries({
         queryKey: ["latestMessage", newText.chatId],
