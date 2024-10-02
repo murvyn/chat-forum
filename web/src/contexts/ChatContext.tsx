@@ -169,7 +169,6 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   const { toast, dismiss } = useToast();
   const navigate = useNavigate();
 
-
   useEffect(() => {
     localStorage.setItem("chatId", chatId);
   }, [chatId]);
@@ -228,9 +227,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       socket?.on("getMessage", (message) => {
         if (chatId === message.chatId && message.sender === recipientId) {
           setMessages((prevMessages) => {
-            return prevMessages
-              ? [...prevMessages, message]
-              : [message];
+            return prevMessages ? [...prevMessages, message] : [message];
           });
         }
       });
@@ -258,6 +255,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
 
       socket?.on("getNotifications", async (response) => {
         if (response.chatId !== chatId) {
+          queryClient.invalidateQueries({ queryKey: ["userChats"] });
           const audio = new Audio(notificationSound);
           audio.play().catch((error) => {
             console.error("Error playing notification sound:", error);
@@ -411,7 +409,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
         token
       );
 
-      return response?.messages
+      return response?.messages;
     }
   };
 
@@ -715,7 +713,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   );
 
   const upload = useCallback(async (file: File) => {
-    console.log(file)
+    console.log(file);
     const formData = new FormData();
     formData.append("file", file);
     try {
