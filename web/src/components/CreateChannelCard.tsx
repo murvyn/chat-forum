@@ -31,11 +31,13 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useState } from "react";
 import { Spinner } from "./spinner";
 import { useToast } from "@/components/ui/use-toast";
+import { useNavigate } from "react-router-dom";
 
 const CreateChannelCard = () => {
   const { users, setChatId } = useChat();
   const { token } = useAuth();
   const queryClient = useQueryClient();
+  const navigate = useNavigate()
   const OPTIONS: Option[] = users.map((user) => ({
     label: `${user.firstName} ${user.lastName}`,
     value: user._id,
@@ -90,6 +92,7 @@ const CreateChannelCard = () => {
         users: [],
       });
       setChatId(chat._id);
+      navigate(`/channels/${chat._id}`)
       queryClient.invalidateQueries({ queryKey: ["userChats"] });
     },
   });

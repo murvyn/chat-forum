@@ -169,11 +169,11 @@ const handleSendGroupMessage = (groupMessage: any) => {
 };
 
 const handleDisconnect = (userId: string | undefined, socketId: string) => {
-  console.log("User disconnected:", socketId);
+  console.log("userId", userId)
   if (userId) {
-    onlineUsers = onlineUsers.filter((user) => user.socketId !== socketId);
+    onlineUsers = onlineUsers.filter((user) => user.userId !== userId);
     io.emit("getOnlineUsers", onlineUsers);
-    console.log("User disconnected", socketId);
+    console.log("User disconnected", socketId, onlineUsers);
   }
 };
 
