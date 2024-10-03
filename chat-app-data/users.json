@@ -1,0 +1,228 @@
+[
+  {
+    "_id":{"$oid" :"668a14d58238987d60db0710"},
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john123.d2oe@example.com",
+    "indexNumber": "1234567890",
+    "password": "password",
+    "role": "lecturer",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0801"},
+      "name": "Computer Engineering"
+    },
+    "courses": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0891"},
+        "name": "Introduction to Programming"
+      }
+    ]
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0120"},
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane.smi3th@example.com",
+    "indexNumber": "0987054321",
+    "password": "password",
+    "role": "student",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0801"},
+      "name": "Computer Engineering"
+    },
+    "courses": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0891"},
+        "name": "Introduction to Programming"
+      }
+    ]
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0130"},
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "email": "michael.john5son@example.com",
+    "indexNumber": "234567n901",
+    "password": "password",
+    "role": "student",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0801"},
+      "name": "Computer Engineering"
+    },
+    "courses": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0891"},
+        "name": "Introduction to Programming"
+      }
+    ]
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0140"},
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "email": "emily.dav6is@example.com",
+    "indexNumber": "3456787012",
+    "password": "password",
+    "role": "HOD",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0801"},
+      "name": "Computer Engineering"
+    },
+    "courses": []
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0150"},
+    "firstName": "David",
+    "lastName": "Brown",
+    "email": "david.brow7n@example.com",
+    "indexNumber": "456789p123",
+    "password": "password",
+    "role": "HOD",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0802"},
+      "name": "Electrical Engineering"
+    },
+    "courses": []
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0160"},
+    "firstName": "Sarah",
+    "lastName": "Anderson",
+    "email": "sarah.an8derson@example.com",
+    "indexNumber": "567890o234",
+    "password": "password",
+    "role": "lecturer",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0802"},
+      "name": "Electrical Engineering"
+    },
+    "courses": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0892"},
+        "name": "Circuit Theory"
+      }
+    ]
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0170"},
+    "firstName": "Robert",
+    "lastName": "Garcia",
+    "email": "robert.garcia0@example.com",
+    "indexNumber": "6989012345",
+    "password": "password",
+    "role": "student",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0802"},
+      "name": "Electrical Engineering"
+    },
+    "courses": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0892"},
+        "name": "Circuit Theory"
+      }
+    ]
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0180"},
+    "firstName": "Linda",
+    "lastName": "Wilson",
+    "email": "linda.wilson8@example.com",
+    "indexNumber": "7890123456",
+    "password": "password",
+    "role": "student",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0803"},
+      "name": "Mechanical Engineering"
+    },
+    "courses": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0893"},
+        "name": "Mechanical Design"
+      }
+    ]
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0190"},
+    "firstName": "James",
+    "lastName": "Miller",
+    "email": "james.mille5r@example.com",
+    "indexNumber": "8901234h67",
+    "password": "password",
+    "role": "HOD",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0803"},
+      "name": "Mechanical Engineering"
+    },
+    "courses": []
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0101"},
+    "firstName": "William",
+    "lastName": "Martinez",
+    "email": "william.marti3nez@example.com",
+    "indexNumber": "901234p678",
+    "password": "password",
+    "role": "lecturer",
+    "department": {
+      "_id": "668a14eb8238987d60db0803",
+      "name": "Mechanical Engineering"
+    },
+    "courses": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0893"},
+        "name": "Mechanical Design"
+      }
+    ]
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0111"},
+    "firstName": "Karen",
+    "lastName": "Thompson",
+    "email": "karen.thom5pson@example.com",
+    "indexNumber": "0123k56789",
+    "password": "password",
+    "role": "student",
+    "department": {
+      "_id": "668a14d58238987d60db0832",
+      "name": "Mechanical Engineering"
+    },
+    "courses": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0893"},
+        "name": "Mechanical Design"
+      }
+    ]
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0112"},
+    "firstName": "Esther Smith",
+    "lastName": "White",
+    "email": "daniel.w55hite@example.com",
+    "indexNumber": "9876543j10",
+    "password": "password",
+    "role": "student",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0801"},
+      "name": "Computer Engineering"
+    },
+    "courses": [
+      { "_id": { "$oid": "668a14d58238987d60db0894" }, "name": "Solid State" }
+    ]
+  },
+  {
+    "_id": { "$oid": "668a14d58238987d60db0114" },
+    "firstName": "Samuel",
+    "lastName": "Doe",
+    "email": "daniel.wh66ite@example.com",
+    "indexNumber": "98765k3210",
+    "password": "password",
+    "role": "lecturer",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0801"},
+      "name": "Computer Engineering"
+    },
+    "courses": [
+      { "_id": { "$oid": "668a14d58238987d60db0894" }, "name": "Solid State" }
+    ]
+  }
+]

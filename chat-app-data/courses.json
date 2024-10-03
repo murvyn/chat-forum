@@ -1,0 +1,104 @@
+[
+  {
+    "_id": {"$oid":"668a14d58238987d60db0891"},
+    "name": "Introduction to Programming",
+    "code": "COMP101",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0801"},
+      "name": "Computer Engineering"
+    },
+    "lecturers": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0710"},
+        "firstName": "John",
+        "lastName": "Doe"
+      }
+    ],
+    "students": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0120"},
+        "firstName": "Jane",
+        "lastName": "Smith"
+      },
+      {
+        "_id": {"$oid":"668a14d58238987d60db0130"},
+        "firstName": "Michael",
+        "lastName": "Johnson"
+      }
+    ]
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0894"},
+    "name": "Solid State",
+    "code": "COMP102",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0801"},
+      "name": "Computer Engineering"
+    },
+    "lecturers": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0222"},
+        "firstName": "Samuel",
+        "lastName": "Doe"
+      }
+    ],
+    "students": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0112"},
+        "firstName": "Esther",
+        "lastName": "Smith"
+      }
+    ]
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0892"},
+    "name": "Circuit Theory",
+    "code": "ELEC201",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0802"},
+      "name": "Electrical Engineering"
+    },
+    "lecturers": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0160"},
+        "firstName": "Sarah",
+        "lastName": "Anderson"
+      }
+    ],
+    "students": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0170"},
+        "firstName": "Robert",
+        "lastName": "Garcia"
+      }
+    ]
+  },
+  {
+    "_id": {"$oid":"668a14d58238987d60db0893"},
+    "name": "Mechanical Design",
+    "code": "MECH301",
+    "department": {
+      "_id": {"$oid":"668a14eb8238987d60db0803"},
+      "name": "Mechanical Engineering"
+    },
+    "lecturers": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0101"},
+        "firstName": "William",
+        "lastName": "Martinez"
+      }
+    ],
+    "students": [
+      {
+        "_id": {"$oid":"668a14d58238987d60db0180"},
+        "firstName": "Linda",
+        "lastName": "Wilson"
+      },
+      {
+        "_id": {"$oid":"668a14d58238987d60db0111"},
+        "firstName": "Karen",
+        "lastName": "Thompson"
+      }
+    ]
+  }
+]

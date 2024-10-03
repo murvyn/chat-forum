@@ -1,0 +1,1348 @@
+[{
+  "_id": {
+    "$oid": "668d5a0e0578e8fb2b272497"
+  },
+  "members": [
+    {
+      "$oid": "6670c670b97072bdf7219dcb"
+    },
+    {
+      "$oid": "668a14d58238987d60db0110"
+    }
+  ],
+  "type": "direct",
+  "courses": [
+    {
+      "$oid": "668a14d58238987d60db0891"
+    }
+  ],
+  "department": {
+    "$oid": "668a14eb8238987d60db0801"
+  },
+  "messages": [
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-12T05:32:40.969Z"
+      },
+      "_id": {
+        "$oid": "6690bff886fc6fb551558a49"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "sup",
+      "createdAt": {
+        "$date": "2024-07-12T05:32:59.587Z"
+      },
+      "_id": {
+        "$oid": "6690c00b86fc6fb551558a5e"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "do you need something?",
+      "createdAt": {
+        "$date": "2024-07-12T05:38:48.561Z"
+      },
+      "_id": {
+        "$oid": "6690c16861102bd6a544ef09"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "Guys please I need accommodation for KNUST from 16th to 19th. Please If you have Gee for KNUST that will allow me to perch for the days, let me know. The price of their guest house is abnormal.  Please help brother man",
+      "createdAt": {
+        "$date": "2024-07-12T12:10:20.122Z"
+      },
+      "_id": {
+        "$oid": "66911d2c7f44ba000441b50d"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "Guys please I need accommodation for KNUST from 16th to 19th. Please If you have Gee for KNUST that will allow me to perch for the days, let me know. The price of their guest house is abnormal.  Please help brother man, Guys please I need accommodation for KNUST from 16th to 19th. Please If you have Gee for KNUST that will allow me to perch for the days, let me know. The price of their guest house is abnormal.  Please help brother man, 😀sure",
+      "createdAt": {
+        "$date": "2024-07-12T12:41:19.287Z"
+      },
+      "_id": {
+        "$oid": "6691246f7f44ba000441b54a"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "Guys please I need accommodation for KNUST from 16th to 19th. Please If you have Gee for KNUST that will allow me to perch for the days, let me know. The price of their guest house is abnormal.  Please help brother man, Guys please I need accommodation for KNUST from 16th to 19th. Please If you have Gee for KNUST that will allow me to perch for the days, let me know. The price of their guest house is abnormal.  Please help brother man, 😀sure",
+      "createdAt": {
+        "$date": "2024-07-12T12:45:17.803Z"
+      },
+      "_id": {
+        "$oid": "6691255d7f44ba000441b552"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-12T12:53:29.456Z"
+      },
+      "_id": {
+        "$oid": "669127497f44ba000441b65e"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-12T12:55:04.810Z"
+      },
+      "_id": {
+        "$oid": "669127a87f44ba000441b74a"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T03:55:35.270Z"
+      },
+      "_id": {
+        "$oid": "66934c37e8cce211609093bd"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T03:55:43.526Z"
+      },
+      "_id": {
+        "$oid": "66934c3fe8cce211609093c9"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T03:56:52.781Z"
+      },
+      "_id": {
+        "$oid": "66934c84e8cce211609095a8"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "why are you here",
+      "createdAt": {
+        "$date": "2024-07-14T03:57:07.349Z"
+      },
+      "_id": {
+        "$oid": "66934c93e8cce211609095b6"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T03:57:16.992Z"
+      },
+      "_id": {
+        "$oid": "66934c9ce8cce211609095c5"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:01:34.852Z"
+      },
+      "_id": {
+        "$oid": "66934d9ee8cce2116090994f"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "ji",
+      "createdAt": {
+        "$date": "2024-07-14T04:03:07.621Z"
+      },
+      "_id": {
+        "$oid": "66934dfbe8cce21160909d44"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T04:04:13.462Z"
+      },
+      "_id": {
+        "$oid": "66934e3de8cce2116090a077"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:09:04.648Z"
+      },
+      "_id": {
+        "$oid": "66934f60e8cce2116090aca8"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T04:11:00.161Z"
+      },
+      "_id": {
+        "$oid": "66934fd4e8cce2116090b4a8"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T04:11:19.387Z"
+      },
+      "_id": {
+        "$oid": "66934fe7e8cce2116090b5d7"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:12:46.732Z"
+      },
+      "_id": {
+        "$oid": "6693503ee8cce2116090be42"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T04:12:57.506Z"
+      },
+      "_id": {
+        "$oid": "66935049e8cce2116090be59"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:14:08.855Z"
+      },
+      "_id": {
+        "$oid": "66935090ed00c1f97210c2a4"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T04:14:28.695Z"
+      },
+      "_id": {
+        "$oid": "669350a4ed00c1f97210c3b5"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:16:20.168Z"
+      },
+      "_id": {
+        "$oid": "66935114ed00c1f97210c3cf"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T04:16:29.080Z"
+      },
+      "_id": {
+        "$oid": "6693511ded00c1f97210c3ea"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "please",
+      "createdAt": {
+        "$date": "2024-07-14T04:16:41.919Z"
+      },
+      "_id": {
+        "$oid": "66935129ed00c1f97210c406"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "why",
+      "createdAt": {
+        "$date": "2024-07-14T04:16:52.151Z"
+      },
+      "_id": {
+        "$oid": "66935134ed00c1f97210c423"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "idk",
+      "createdAt": {
+        "$date": "2024-07-14T04:16:57.575Z"
+      },
+      "_id": {
+        "$oid": "66935139ed00c1f97210c441"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T04:17:08.921Z"
+      },
+      "_id": {
+        "$oid": "66935144ed00c1f97210c460"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:17:12.710Z"
+      },
+      "_id": {
+        "$oid": "66935148ed00c1f97210c480"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:21:41.902Z"
+      },
+      "_id": {
+        "$oid": "66935255ed00c1f97210d75d"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:23:22.666Z"
+      },
+      "_id": {
+        "$oid": "669352bae80b70bc9afdaa44"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:24:44.483Z"
+      },
+      "_id": {
+        "$oid": "6693530ce80b70bc9afdb01f"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T04:30:40.962Z"
+      },
+      "_id": {
+        "$oid": "66935470f617dca40fd23d33"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "chale",
+      "createdAt": {
+        "$date": "2024-07-14T04:30:49.259Z"
+      },
+      "_id": {
+        "$oid": "66935479f617dca40fd23d58"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:31:18.260Z"
+      },
+      "_id": {
+        "$oid": "66935496f617dca40fd24058"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T04:31:21.277Z"
+      },
+      "_id": {
+        "$oid": "66935499f617dca40fd2407f"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:33:39.086Z"
+      },
+      "_id": {
+        "$oid": "66935523f617dca40fd240a7"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "what do you want",
+      "createdAt": {
+        "$date": "2024-07-14T04:34:01.373Z"
+      },
+      "_id": {
+        "$oid": "66935539f617dca40fd2414b"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T04:36:14.175Z"
+      },
+      "_id": {
+        "$oid": "669355bef617dca40fd252d8"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:36:19.220Z"
+      },
+      "_id": {
+        "$oid": "669355c3f617dca40fd25303"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:37:12.255Z"
+      },
+      "_id": {
+        "$oid": "669355f8f617dca40fd253df"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T04:37:19.873Z"
+      },
+      "_id": {
+        "$oid": "669355fff617dca40fd2540c"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:38:05.467Z"
+      },
+      "_id": {
+        "$oid": "6693562df617dca40fd257a4"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T04:38:22.743Z"
+      },
+      "_id": {
+        "$oid": "6693563ef617dca40fd25991"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T04:38:31.125Z"
+      },
+      "_id": {
+        "$oid": "66935647f617dca40fd25a21"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "ji",
+      "createdAt": {
+        "$date": "2024-07-14T04:38:54.410Z"
+      },
+      "_id": {
+        "$oid": "6693565ef617dca40fd25f26"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hhi",
+      "createdAt": {
+        "$date": "2024-07-14T04:39:28.301Z"
+      },
+      "_id": {
+        "$oid": "66935680f617dca40fd264e3"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:39:32.493Z"
+      },
+      "_id": {
+        "$oid": "66935684f617dca40fd26516"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "yeah",
+      "createdAt": {
+        "$date": "2024-07-14T04:39:37.931Z"
+      },
+      "_id": {
+        "$oid": "66935689f617dca40fd2654a"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T04:39:43.392Z"
+      },
+      "_id": {
+        "$oid": "6693568ff617dca40fd2657f"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "i am marvin",
+      "createdAt": {
+        "$date": "2024-07-14T04:39:49.336Z"
+      },
+      "_id": {
+        "$oid": "66935695f617dca40fd265b5"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "what us your name",
+      "createdAt": {
+        "$date": "2024-07-14T04:39:57.167Z"
+      },
+      "_id": {
+        "$oid": "6693569df617dca40fd265ec"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "my name is eric",
+      "createdAt": {
+        "$date": "2024-07-14T04:40:14.752Z"
+      },
+      "_id": {
+        "$oid": "669356aef617dca40fd268e2"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "nice to meat you",
+      "createdAt": {
+        "$date": "2024-07-14T04:40:22.964Z"
+      },
+      "_id": {
+        "$oid": "669356b6f617dca40fd2691b"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T04:41:41.824Z"
+      },
+      "_id": {
+        "$oid": "66935705cf5e9fdcef35485e"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:41:55.788Z"
+      },
+      "_id": {
+        "$oid": "66935713cf5e9fdcef35494a"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:48:21.526Z"
+      },
+      "_id": {
+        "$oid": "66935895cf5e9fdcef354986"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "ji",
+      "createdAt": {
+        "$date": "2024-07-14T04:48:28.779Z"
+      },
+      "_id": {
+        "$oid": "6693589ccf5e9fdcef3549c3"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "ji",
+      "createdAt": {
+        "$date": "2024-07-14T04:49:07.124Z"
+      },
+      "_id": {
+        "$oid": "669358c3cf5e9fdcef354f4c"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "ji",
+      "createdAt": {
+        "$date": "2024-07-14T04:49:10.459Z"
+      },
+      "_id": {
+        "$oid": "669358c6cf5e9fdcef354f8b"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:49:51.576Z"
+      },
+      "_id": {
+        "$oid": "669358efd7040a0ab8cb7a54"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:50:20.908Z"
+      },
+      "_id": {
+        "$oid": "6693590cd7040a0ab8cb7f55"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:50:29.775Z"
+      },
+      "_id": {
+        "$oid": "66935915d7040a0ab8cb8200"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:51:01.143Z"
+      },
+      "_id": {
+        "$oid": "66935935e66b93c65e81aca8"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T04:51:07.976Z"
+      },
+      "_id": {
+        "$oid": "6693593be66b93c65e81acec"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:52:13.035Z"
+      },
+      "_id": {
+        "$oid": "6693597de66b93c65e81b239"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T04:52:20.351Z"
+      },
+      "_id": {
+        "$oid": "66935984e66b93c65e81b27f"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:52:39.385Z"
+      },
+      "_id": {
+        "$oid": "66935997e66b93c65e81b55c"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T04:54:51.053Z"
+      },
+      "_id": {
+        "$oid": "66935a1be66b93c65e81c0ff"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T04:54:56.316Z"
+      },
+      "_id": {
+        "$oid": "66935a20e66b93c65e81c148"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "what the fuck is wrong",
+      "createdAt": {
+        "$date": "2024-07-14T04:55:06.218Z"
+      },
+      "_id": {
+        "$oid": "66935a2ae66b93c65e81c192"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T04:58:49.373Z"
+      },
+      "_id": {
+        "$oid": "66935b0996f81e0c83339ff1"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T05:00:39.202Z"
+      },
+      "_id": {
+        "$oid": "66935b7796f81e0c8333a5c3"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T05:00:48.604Z"
+      },
+      "_id": {
+        "$oid": "66935b8096f81e0c8333a610"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T05:01:28.230Z"
+      },
+      "_id": {
+        "$oid": "66935ba896f81e0c8333acf9"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T05:01:33.062Z"
+      },
+      "_id": {
+        "$oid": "66935bad96f81e0c8333ad48"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T05:02:16.904Z"
+      },
+      "_id": {
+        "$oid": "66935bd896f81e0c8333bf00"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T05:04:28.230Z"
+      },
+      "_id": {
+        "$oid": "66935c5c96f81e0c8333c821"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T05:05:35.543Z"
+      },
+      "_id": {
+        "$oid": "66935c9f96f81e0c8333e136"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "ok",
+      "createdAt": {
+        "$date": "2024-07-14T05:05:39.508Z"
+      },
+      "_id": {
+        "$oid": "66935ca396f81e0c8333e189"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T05:15:03.978Z"
+      },
+      "_id": {
+        "$oid": "66935ed7883082c2616b4603"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T05:16:03.444Z"
+      },
+      "_id": {
+        "$oid": "66935f13883082c2616b54b4"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "helo",
+      "createdAt": {
+        "$date": "2024-07-14T05:16:16.152Z"
+      },
+      "_id": {
+        "$oid": "66935f20883082c2616b550a"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T05:16:24.131Z"
+      },
+      "_id": {
+        "$oid": "66935f28883082c2616b5561"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T18:42:19.660Z"
+      },
+      "_id": {
+        "$oid": "66941c0b6c6c3a04afec09ef"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T18:42:27.398Z"
+      },
+      "_id": {
+        "$oid": "66941c136c6c3a04afec0a48"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T18:43:14.196Z"
+      },
+      "_id": {
+        "$oid": "66941c426c6c3a04afec1124"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "im well",
+      "createdAt": {
+        "$date": "2024-07-14T18:43:22.428Z"
+      },
+      "_id": {
+        "$oid": "66941c4a6c6c3a04afec117f"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "sure",
+      "createdAt": {
+        "$date": "2024-07-14T18:47:39.608Z"
+      },
+      "_id": {
+        "$oid": "66941d4b6c6c3a04afec11db"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-14T18:48:20.513Z"
+      },
+      "_id": {
+        "$oid": "66941d746c6c3a04afec1238"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-14T19:05:53.291Z"
+      },
+      "_id": {
+        "$oid": "669421916c6c3a04afec550c"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "sup",
+      "createdAt": {
+        "$date": "2024-07-14T19:06:16.329Z"
+      },
+      "_id": {
+        "$oid": "669421a86c6c3a04afec55cb"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-15T14:42:32.975Z"
+      },
+      "_id": {
+        "$oid": "66953558b8b86732e6f13a13"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-16T13:57:34.828Z"
+      },
+      "_id": {
+        "$oid": "66967c4e6f48ba51c5696449"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-16T18:18:39.521Z"
+      },
+      "_id": {
+        "$oid": "6696b97f785f41019440f624"
+      }
+    }
+  ],
+  "__v": 108,
+  "updatedAt": {
+    "$date": "2024-07-16T18:18:39.567Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "668e76352ed671ec423c2fcf"
+  },
+  "members": [
+    {
+      "$oid": "6670c670b97072bdf7219dcb"
+    },
+    {
+      "$oid": "668a14d58238987d60db0120"
+    }
+  ],
+  "type": "direct",
+  "courses": [
+    {
+      "$oid": "668a14d58238987d60db0891"
+    }
+  ],
+  "department": {
+    "$oid": "668a14eb8238987d60db0801"
+  },
+  "messages": [
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "yeah",
+      "createdAt": {
+        "$date": "2024-07-14T18:48:32.938Z"
+      },
+      "_id": {
+        "$oid": "66941d806c6c3a04afec1299"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-16T23:39:52.055Z"
+      },
+      "_id": {
+        "$oid": "669704c81cddab0536638d00"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0120"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-16T23:40:11.772Z"
+      },
+      "_id": {
+        "$oid": "669704db1cddab0536638d05"
+      }
+    }
+  ],
+  "__v": 6,
+  "updatedAt": {
+    "$date": "2024-07-16T23:40:11.777Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66902feface634236652d23d"
+  },
+  "members": [
+    {
+      "$oid": "6670c670b97072bdf7219dcb"
+    },
+    {
+      "$oid": "668a14d58238987d60db0130"
+    }
+  ],
+  "type": "direct",
+  "courses": [
+    {
+      "$oid": "668a14d58238987d60db0891"
+    }
+  ],
+  "department": {
+    "$oid": "668a14eb8238987d60db0801"
+  },
+  "messages": [],
+  "createdAt": {
+    "$date": "2024-07-11T19:18:07.149Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-12T05:28:41.408Z"
+  },
+  "__v": 4
+},
+{
+  "_id": {
+    "$oid": "6691784ee4a92ee83e3d7847"
+  },
+  "members": [
+    {
+      "$oid": "6670c670b97072bdf7219dcb"
+    },
+    {
+      "$oid": "668a14d58238987d60db0110"
+    },
+    {
+      "$oid": "668a14d58238987d60db0120"
+    },
+    {
+      "$oid": "668a14d58238987d60db0130"
+    }
+  ],
+  "name": "Introduction to Programming",
+  "type": "course",
+  "courses": [
+    {
+      "$oid": "668a14d58238987d60db0891"
+    }
+  ],
+  "department": {
+    "$oid": "668a14eb8238987d60db0801"
+  },
+  "messages": [
+    {
+      "sender": {
+        "$oid": "6670c670b97072bdf7219dcb"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-13T01:46:17.512Z"
+      },
+      "_id": {
+        "$oid": "6691dc69e4a92ee83e3dcbf7"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0110"
+      },
+      "text": "hi",
+      "createdAt": {
+        "$date": "2024-07-13T01:46:53.436Z"
+      },
+      "_id": {
+        "$oid": "6691dc8de4a92ee83e3dccc7"
+      }
+    },
+    {
+      "sender": {
+        "$oid": "668a14d58238987d60db0120"
+      },
+      "text": "hello",
+      "createdAt": {
+        "$date": "2024-07-16T23:41:14.565Z"
+      },
+      "_id": {
+        "$oid": "6697051a1cddab0536638fd8"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-07-12T18:39:10.633Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T22:46:11.051Z"
+  },
+  "__v": 2269
+}]
