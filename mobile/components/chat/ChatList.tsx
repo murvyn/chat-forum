@@ -72,7 +72,8 @@ export function ChatList({ isChannel }: { isChannel?: boolean }) {
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    style={{ flex: 1 }}
+      behavior={Platform.OS === "ios" ? "padding" : "padding"}
       keyboardVerticalOffset={Platform.OS === "ios" ? 75 : 0}
       className="justify-between h-full dark:bg-neutral-900"
     >
@@ -93,6 +94,7 @@ export function ChatList({ isChannel }: { isChannel?: boolean }) {
               onContentSizeChange={() =>
                 scrollViewRef.current?.scrollToEnd({ animated: true })
               }
+              style={{ flex: 1 }}
             >
               {messages?.map((message) => {
                 const formattedTime = getFormattedTime(message.createdAt);

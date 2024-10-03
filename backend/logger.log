@@ -12213,3 +12213,22 @@ Error: read ECONNRESET
 2024-10-03T00:28:21.723Z [error]: Cached chats are not in the expected format
 2024-10-03T00:28:21.724Z [error]: Cached chats are not in the expected format
 2024-10-03T00:28:27.495Z [error]: Cached chats are not in the expected format
+2024-10-03T12:13:45.553Z [info]: Listening on port 5000...
+2024-10-03T12:13:45.794Z [info]: Connected to MongoDB...
+2024-10-03T12:22:53.249Z [info]: Connected to Redis...
+2024-10-03T12:22:53.478Z [error]: Cached chats are not in the expected format
+2024-10-03T12:22:53.483Z [error]: Cached chats are not in the expected format
+2024-10-03T12:22:53.484Z [error]: Cached chats are not in the expected format
+2024-10-03T12:22:53.487Z [error]: Cached chats are not in the expected format
+2024-10-03T12:22:53.489Z [error]: Cached chats are not in the expected format
+2024-10-03T12:22:54.412Z [error]: Cached chats are not in the expected format
+2024-10-03T12:22:54.414Z [error]: Cached chats are not in the expected format
+2024-10-03T12:22:55.049Z [error]: Cached chats are not in the expected format
+2024-10-03T12:22:55.100Z [error]: Cached chats are not in the expected format
+2024-10-03T12:23:16.544Z [error]: Cached chats are not in the expected format
+2024-10-03T12:23:16.936Z [error]: Cached chats are not in the expected format
+2024-10-03T12:23:17.053Z [error]: Cached chats are not in the expected format
+2024-10-03T12:23:17.297Z [error]: Cached chats are not in the expected format
+2024-10-03T12:23:17.744Z [error]: Cached chats are not in the expected format
+2024-10-03T12:23:17.773Z [error]: Cached chats are not in the expected format
+2024-10-03T12:23:18.592Z [error]: Cached chats are not in the expected format
