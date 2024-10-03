@@ -61,14 +61,15 @@
         "origin": false
       },
       "eas": {
-        "projectId": "da548694-20ff-413f-9bac-e59e6cf410cb"
+        "projectId": "5e6ca508-9e6d-4dbe-9ee1-8c0c5ef5989a"
       }
     },
     "runtimeVersion": {
       "policy": "appVersion"
     },
+    "owner": "marvinom",
     "updates": {
-      "url": "https://u.expo.dev/da548694-20ff-413f-9bac-e59e6cf410cb"
+      "url": "https://u.expo.dev/5e6ca508-9e6d-4dbe-9ee1-8c0c5ef5989a"
     }
   }
 }

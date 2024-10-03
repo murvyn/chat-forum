@@ -71,6 +71,6 @@ export const putRequest = async (
   }
 };
 
-export const baseUrl = process.env.EXPO_PUBLIC_API_URL
+export const baseUrl = 'https://chat-forum-api-db3bf0ece27b.herokuapp.com'
 
-// 'https://chat-forum-api-db3bf0ece27b.herokuapp.com/api'
+
