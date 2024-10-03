@@ -141,18 +141,7 @@ const ChatHeader = ({
           </View>
         </TouchableOpacity>
       </View>
-      <View className="flex-row space-x-5 mr-4">
-        <Feather
-          name="video"
-          size={25}
-          color={colorScheme === "dark" ? "white" : "black"}
-        />
-        <Feather
-          name="phone"
-          size={25}
-          color={colorScheme === "dark" ? "white" : "black"}
-        />
-      </View>
+
       <CustomBottomSheet
         ref={bottomSheetRef}
         snapPoints={user ? snapUserPoints : snapChannelPoints}
