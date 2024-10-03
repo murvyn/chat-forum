@@ -266,3 +266,115 @@ After deployment, ensure the following features are working correctly:
 - **WebSocket Connection:** Verify that real-time chat functionality, including sending and receiving messages, is functioning without issues.
 - **Media Handling:** Test uploading images, videos, and audio files to confirm that the file upload and display process works smoothly.
 - **Performance Testing:** Use Vercel’s analytics to monitor the performance of your application and detect potential bottlenecks.
+
+Here’s how to include the setup guide, environment configuration, and running instructions in your documentation, complete with details on installing dependencies and running the development server:
+
+---
+
+## **Setup Guide**
+
+To get the project running locally, follow these steps. This guide will walk you through setting up your environment, configuring the necessary files, installing dependencies, and running the app.
+
+### **1. Prerequisites**
+
+Ensure you have the following installed on your system:
+
+- **Node.js**: Download and install the latest LTS version from [Node.js](https://nodejs.org).
+- **npm**: Comes with Node.js. Verify it’s installed by running:
+
+  ```bash
+  npm -v
+  ```
+
+- **MongoDB**: Install MongoDB locally by following the instructions on [MongoDB's official site](https://www.mongodb.com/try/download/community). Make sure MongoDB is running.
+- **Redis**: Install Redis locally, or use a cloud-based Redis service if necessary.
+- **Vite**: Make sure Vite is set up for your development environment. If not, you can install it globally:
+
+  ```bash
+  npm install -g vite
+  ```
+
+### **2. Cloning the Repository**
+
+Clone the project repository to your local machine:
+
+```bash
+git clone <your-repository-url>
+cd <your-project-directory>
+```
+
+### **3. Setting Up the Environment Variables**
+
+Create a `.env` file in the root directory of your project and add the following variables based on your environment:
+
+```bash
+# Backend and API Configuration
+VITE_BASEURL=http://localhost:5000
+# VITE_BASEURL=https://chat-forum-api-db3bf0ece27b.herokuapp.com
+
+# Agora Configuration for Voice/Video Calling
+VITE_AGORA_APPID=d90459e3074b40a9848bd6d5a10e6631
+
+# Cloudinary Configuration for Media Uploads
+CLOUDINARY_URL=cloudinary://332927511219839:DKya89qUevN69lvkwNzE00qrA0o@droeaaqpq
+```
+
+**Environment Variables Breakdown:**
+
+- **VITE_BASEURL**: The base URL of your backend API. For local development, use `http://localhost:5000`. For production, uncomment the Heroku URL.
+- **VITE_AGORA_APPID**: Your Agora App ID, which is used for initiating voice and video calls.
+- **CLOUDINARY_URL**: Cloudinary connection string used for uploading images, videos, and audio files.
+
+Make sure to adjust these values depending on whether you’re working in development or production.
+
+### **4. Install Dependencies**
+
+After setting up your environment variables, install the project dependencies:
+
+```bash
+npm install
+```
+
+This will install all necessary dependencies, including React, Vite, Socket.IO, Agora SDK, Tailwind CSS, and others listed in the `package.json`.
+
+### **5. Running the Development Server**
+
+Now you’re ready to run the application in development mode:
+
+```bash
+npm run dev
+```
+
+This will start the development server using Vite. Once the server is running, you’ll see the local URL in the terminal (e.g., `http://localhost:5173`), which you can open in your browser to start using the app.
+
+### **6. Running the Backend (Optional)**
+
+If you are working with the backend as well, ensure that the backend server is running. You can start the backend server separately by navigating to the backend directory and running:
+
+```bash
+npm install
+npm start
+```
+
+Ensure that MongoDB and Redis are running locally or via cloud-based services as well.
+
+### **7. Accessing the Application**
+
+Once everything is running, you can access your app at:
+
+- **Frontend**: `http://localhost:5173`
+- **Backend**: `http://localhost:5000`
+
+### **8. Testing the Application**
+
+- **User Authentication**: Test the login and signup flows.
+- **Chat Functionality**: Ensure real-time messaging works, including sending text, media, and voice messages.
+- **Agora Integration**: Verify that voice and video calls are functional by initiating a call from within the app.
+
+---
+
+## **Final Checks**
+
+- Ensure all environment variables are correctly configured in the `.env` file.
+- Make sure MongoDB and Redis services are running and connected properly to the application.
+- Test both the frontend and backend thoroughly to verify functionality.
