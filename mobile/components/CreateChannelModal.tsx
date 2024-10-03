@@ -13,7 +13,7 @@ import {
 } from "react-native";
 import { View } from "react-native";
 import { Avatar } from "@rneui/themed";
-import { UserChat, UserProps } from "@/types";
+import { Message, UserChat, UserProps } from "@/types";
 import { getInitials } from "@/utils/helpers";
 import { Chip } from "react-native-paper";
 import AppButton from "./AppButton";
@@ -28,10 +28,12 @@ const CreateChannelModal = ({
   users,
   setChatId,
   token,
+  setMessages,
 }: {
   users: UserProps[];
   setChatId: Dispatch<SetStateAction<string | null>>;
   token: string;
+  setMessages: Dispatch<SetStateAction<Message[] | null>>;
 }) => {
   const colorScheme = useColorScheme();
   const [search, setSearch] = useState("");
@@ -94,6 +96,7 @@ const CreateChannelModal = ({
     },
     onSuccess: (chat: UserChat) => {
       setChatId(chat._id);
+      setMessages(null);
       router.push(`/(app)/channels/${chat._id}`);
       dismiss();
       queryClient.invalidateQueries({ queryKey: ["userChats"] });

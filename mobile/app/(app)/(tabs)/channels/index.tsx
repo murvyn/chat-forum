@@ -25,7 +25,7 @@ import { useQueryClient } from "@tanstack/react-query";
 
 const Channels = () => {
   const [filter, setFilter] = useState<"All" | "Unread">("All");
-  const { userGroupChats, isLoadingUserChats, users, setChatId } = useChat();
+  const { userGroupChats, isLoadingUserChats, users, setChatId, setMessages } = useChat();
   const colorScheme = useColorScheme();
   const snapPoints = useMemo(() => ["80%"], []);
   const bottomSheetRef = useRef<BottomSheetModal>(null);
@@ -177,7 +177,7 @@ const Channels = () => {
         />
       )}
       <CustomBottomSheet ref={bottomSheetRef} snapPoints={snapPoints}>
-        <CreateChannelModal token={token} setChatId={setChatId} users={users} />
+        <CreateChannelModal token={token} setChatId={setChatId} users={users} setMessages={setMessages} />
       </CustomBottomSheet>
     </View>
   );

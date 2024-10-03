@@ -28,7 +28,14 @@ const DirectMessages = () => {
   const [filter, setFilter] = useState<FilterOption>("All");
   const [searchResults, setSearchResults] = useState<UserChatWithId[]>([]);
   const colorScheme = useColorScheme();
-  const { userChats, isLoadingUserChats, potentialChats } = useChat();
+  const {
+    userChats,
+    isLoadingUserChats,
+    potentialChats,
+    setRecipientId,
+    setChatId,
+    setMessages,
+  } = useChat();
   const [search, setSearch] = useState("");
   const [refreshing, setRefreshing] = useState(false);
   const [blur, setBlur] = useState(false);
@@ -193,7 +200,12 @@ const DirectMessages = () => {
         </>
       )}
       <CustomBottomSheet ref={bottomSheetRef} snapPoints={snapShot}>
-        <NewChatsModal potentialChats={potentialChats} />
+        <NewChatsModal
+          potentialChats={potentialChats}
+          setRecipientId={setRecipientId}
+          setChatId={setChatId}
+          setMessages={setMessages}
+        />
       </CustomBottomSheet>
     </View>
   );

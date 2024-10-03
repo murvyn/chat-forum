@@ -1,5 +1,5 @@
 import React from "react";
-import * as Notifications from "expo-notifications"
+import * as Notifications from "expo-notifications";
 import {
   Message,
   Notification,
@@ -27,7 +27,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Recording } from "expo-av/build/Audio";
 import { Audio } from "expo-av";
-import { router } from 'expo-router';
+import { router } from "expo-router";
 import { initialNotifications } from "@/lib/notifications";
 
 interface ChatContextProps {
@@ -65,16 +65,14 @@ interface ChatContextProps {
   isLoadingUserChats: boolean;
   newMessage: Message | null;
   getMessages: (chatId: string) => Promise<Message[]>;
-  recordedAudio: string | null
-  setRecordedAudio: Dispatch<
-    SetStateAction<string | null>
-  >;
-  recording: Recording | null
-  setRecording: Dispatch<SetStateAction< Recording | null>>
+  recordedAudio: string | null;
+  setRecordedAudio: Dispatch<SetStateAction<string | null>>;
+  recording: Recording | null;
+  setRecording: Dispatch<SetStateAction<Recording | null>>;
   currentSound: Audio.Sound | null;
   setCurrentSound: React.Dispatch<React.SetStateAction<Audio.Sound | null>>;
-  showCamera: boolean
-  setShowCamera: Dispatch<SetStateAction<boolean>>
+  showCamera: boolean;
+  setShowCamera: Dispatch<SetStateAction<boolean>>;
 }
 
 export const ChatContext = createContext<ChatContextProps>({
@@ -112,7 +110,7 @@ export const ChatContext = createContext<ChatContextProps>({
   currentSound: null,
   setCurrentSound: () => {},
   showCamera: false,
-  setShowCamera: () => null
+  setShowCamera: () => null,
 });
 
 export const useChat = () => {
@@ -142,7 +140,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   const [recordedAudio, setRecordedAudio] = useState<string | null>(null);
   const [recording, setRecording] = useState<Recording | null>(null);
   const [currentSound, setCurrentSound] = useState<Audio.Sound | null>(null);
-  const [showCamera, setShowCamera] = useState(false)
+  const [showCamera, setShowCamera] = useState(false);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const queryClient = useQueryClient();
@@ -150,7 +148,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   const { socket } = useSocket();
   const { user, token } = useAuth();
   const pathname = usePathname();
-  
+
   const { data: users } = useQuery({
     queryKey: ["users", user?._id],
     queryFn: async () => {
@@ -173,17 +171,18 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       }
     }
 
-    Notifications.getLastNotificationResponseAsync()
-      .then(response => {
-        if (!isMounted || !response?.notification) {
-          return;
-        }
-        redirect(response?.notification);
-      });
-
-    const subscription = Notifications.addNotificationResponseReceivedListener(response => {
-      redirect(response.notification);
+    Notifications.getLastNotificationResponseAsync().then((response) => {
+      if (!isMounted || !response?.notification) {
+        return;
+      }
+      redirect(response?.notification);
     });
+
+    const subscription = Notifications.addNotificationResponseReceivedListener(
+      (response) => {
+        redirect(response.notification);
+      }
+    );
 
     return () => {
       isMounted = false;
@@ -192,42 +191,41 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   useEffect(() => {
-  const loadNotifications = async () => {
-    try {
-      const storedNotifications = await AsyncStorage.getItem("notifications");
-      if (storedNotifications) {
-        setNotifications(JSON.parse(storedNotifications));
+    const loadNotifications = async () => {
+      try {
+        const storedNotifications = await AsyncStorage.getItem("notifications");
+        if (storedNotifications) {
+          setNotifications(JSON.parse(storedNotifications));
+        }
+      } catch (error) {
+        console.error("Error loading notifications:", error);
       }
-    } catch (error) {
-      console.error("Error loading notifications:", error);
+    };
+
+    loadNotifications();
+  }, []);
+
+  useEffect(() => {
+    const persistNotifications = async () => {
+      try {
+        const unreadNotification = notifications.filter(
+          (n) =>
+            Object.prototype.hasOwnProperty.call(n, "chatId") &&
+            n.isRead === false &&
+            (userChats?.some((chat) => chat.chatId === n.chatId) ||
+              userGroupChats?.some((chat) => chat.chatId === n.chatId))
+        );
+        const jsonValue = JSON.stringify(unreadNotification);
+        await AsyncStorage.setItem("notifications", jsonValue);
+      } catch (error) {
+        console.error("Error saving notifications:", error);
+      }
+    };
+
+    if (notifications.length > 0) {
+      persistNotifications();
     }
-  };
-
-  loadNotifications();
-}, []);
-
-
-useEffect(() => {
-  const persistNotifications = async () => {
-    try {
-      const unreadNotification = notifications.filter(
-        (n) =>
-          Object.prototype.hasOwnProperty.call(n, "chatId") &&
-          n.isRead === false &&
-          (userChats?.some((chat) => chat.chatId === n.chatId) ||
-            userGroupChats?.some((chat) => chat.chatId === n.chatId))
-      );
-      const jsonValue = JSON.stringify(unreadNotification);
-      await AsyncStorage.setItem("notifications", jsonValue);
-    } catch (error) {
-      console.error("Error saving notifications:", error);
-    }
-  };
-
-  if (notifications.length > 0) {
-    persistNotifications();
-  }
-}, [notifications, userChats, userGroupChats]);
+  }, [notifications, userChats, userGroupChats]);
 
   useEffect(() => {
     const userDetails = users?.find(
@@ -248,9 +246,7 @@ useEffect(() => {
       socket?.on("getMessage", (message: Message) => {
         if (chatId === message.chatId && message.sender === recipientId) {
           setMessages((prevMessages) => {
-            return prevMessages
-              ? [...prevMessages, message]
-              : [message];
+            return prevMessages ? [...prevMessages, message] : [message];
           });
         }
       });
@@ -260,19 +256,21 @@ useEffect(() => {
       });
 
       socket?.on("getNotifications", (response) => {
-        if(pathname !== `/direct-messages/${response.chatId}` ||
-          pathname !== `/channels/${response.chatId}`){
-            initialNotifications()
-            const sender = users?.find(user=>user._id === response.sender)
-            Notifications.scheduleNotificationAsync({
-              content: {
-                title: `${sender?.firstName} ${sender?.lastName}`,
-                body: response.message,
-                data: {url: `/direct-messages` }
-              },
-              trigger: null,
-            });
-          }
+        if (
+          pathname !== `/direct-messages/${response.chatId}` ||
+          pathname !== `/channels/${response.chatId}`
+        ) {
+          initialNotifications();
+          const sender = users?.find((user) => user._id === response.sender);
+          Notifications.scheduleNotificationAsync({
+            content: {
+              title: `${sender?.firstName} ${sender?.lastName}`,
+              body: response.message,
+              data: { url: `/direct-messages` },
+            },
+            trigger: null,
+          });
+        }
         setNotifications((prev) =>
           prev
             ? [
@@ -297,21 +295,24 @@ useEffect(() => {
       });
 
       socket?.on("getGroupNotifications", (response) => {
-        if(pathname !== `/direct-messages/${response.chatId}` ||
-          pathname !== `/channels/${response.chatId}`){
-            initialNotifications()
-            const sender = users?.find(user=>user._id === response.sender)
-            const chat = userGroupChats?.find(chat=>chat.chatId === response.chatId)
-            Notifications.scheduleNotificationAsync({
-              content: {
-                title: `${sender?.firstName} ${sender?.lastName} in ${chat?.name}`,
-                body: response.message,
-                data: {url: `/channels` }
-              },
-              trigger: null,
-
-            });
-          }
+        if (
+          pathname !== `/direct-messages/${response.chatId}` ||
+          pathname !== `/channels/${response.chatId}`
+        ) {
+          initialNotifications();
+          const sender = users?.find((user) => user._id === response.sender);
+          const chat = userGroupChats?.find(
+            (chat) => chat.chatId === response.chatId
+          );
+          Notifications.scheduleNotificationAsync({
+            content: {
+              title: `${sender?.firstName} ${sender?.lastName} in ${chat?.name}`,
+              body: response.message,
+              data: { url: `/channels` },
+            },
+            trigger: null,
+          });
+        }
         setNotifications((prev) =>
           prev
             ? [
@@ -355,7 +356,9 @@ useEffect(() => {
         .filter(Boolean) as UserChatWithId[];
 
       const userGroupChatsWithIds: UserGroupChatWithId[] = response.chats
-        ?.filter((chat: UserChat) => chat.type === "course" || chat.type === "group")
+        ?.filter(
+          (chat: UserChat) => chat.type === "course" || chat.type === "group"
+        )
         ?.map((chat: UserChat) => {
           const otherMembersId = chat.members?.filter(
             (memberId) => memberId !== user._id
@@ -440,7 +443,7 @@ useEffect(() => {
         token
       );
 
-      return response?.messages
+      return response?.messages;
     }
   };
 
@@ -622,7 +625,7 @@ useEffect(() => {
       setNewMessage(newMessage);
       setMessages((prev: Message[] | null) =>
         prev
-          ? prev.map((msg) => (msg._id === newText._id ? newMessage: msg))
+          ? prev.map((msg) => (msg._id === newText._id ? newMessage : msg))
           : [newMessage]
       );
       queryClient.invalidateQueries({
@@ -685,7 +688,6 @@ useEffect(() => {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      console.log(formData);
       const response = await fetch(`${baseUrl}/api/uploads`, {
         method: "POST",
         body: formData,
@@ -694,7 +696,6 @@ useEffect(() => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log("response",response)
       if (!response.ok) {
         return console.log("Error uploading file", response);
       }
@@ -734,7 +735,12 @@ useEffect(() => {
     setMessageLoading,
     setRecordedAudio,
     recordedAudio,
-    recording, setRecording,  currentSound, setCurrentSound, showCamera, setShowCamera
+    recording,
+    setRecording,
+    currentSound,
+    setCurrentSound,
+    showCamera,
+    setShowCamera,
   };
   return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;
 };

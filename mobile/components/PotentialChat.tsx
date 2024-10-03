@@ -1,13 +1,12 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import React, { useCallback } from "react";
+import React, { Dispatch, SetStateAction, useCallback } from "react";
 import { Avatar } from "@rneui/themed";
-import { useRouter } from "expo-router";
-import { useChat } from "@/context/ChatContext";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { baseUrl, postRequest } from "@/utils/service";
 import { useAuth } from "@/context/AuthContext";
-import { UserChat } from "@/types";
+import { Message, UserChat } from "@/types";
 import { useSocket } from "@/context/SocketContext";
+import { useRouter } from "expo-router";
 
 const PotentialChat = ({
   user,
@@ -15,15 +14,20 @@ const PotentialChat = ({
   id,
   dismiss,
   photo,
+  setChatId,
+  setRecipientId,
+  setMessages,
 }: {
   user: string;
   initials: string;
   id: string;
   photo: string;
   dismiss: () => void;
+  setRecipientId: Dispatch<SetStateAction<string | null>>;
+  setChatId: Dispatch<SetStateAction<string | null>>;
+  setMessages: Dispatch<SetStateAction<Message[] | null>>;
 }) => {
   const router = useRouter();
-  const { setRecipientId, setChatId } = useChat();
   const { token, user: current } = useAuth();
   const queryClient = useQueryClient();
   const { socket } = useSocket();
@@ -50,7 +54,11 @@ const PotentialChat = ({
     },
     onSuccess: (chat: UserChat) => {
       setChatId(chat._id);
+      setRecipientId(id);
+      setMessages(null);
+      router.push(`/(app)/direct-messages/${chat._id}`);
       queryClient.invalidateQueries({ queryKey: ["userChats"] });
+      dismiss();
     },
   });
 
@@ -60,9 +68,6 @@ const PotentialChat = ({
       if (!res) {
         throw new Error("unable to create chat");
       }
-      setRecipientId(id);
-      dismiss();
-      router.push(`/direct-messages/${res._id}`);
     } catch (error) {
       console.log(error);
     }

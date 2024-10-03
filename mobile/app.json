@@ -4,25 +4,31 @@
     "slug": "chat-forum-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/logo.png",
-      "resizeMode": "contain",
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "UIBackgroundModes": ["location", "fetch", "remote-notification"]
-      }
+        "UIBackgroundModes": [
+          "location",
+          "fetch",
+          "remote-notification"
+        ]
+      },
+      "bundleIdentifier": "com.marvinom.chatforummobile"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.marvinom.chatforummobile"
     },
     "web": {
       "bundler": "metro",
@@ -34,7 +40,9 @@
       [
         "expo-font",
         {
-          "fonts": ["./assets/fonts/Nunito.ttf"]
+          "fonts": [
+            "./assets/fonts/Nunito.ttf"
+          ]
         }
       ],
       [
@@ -42,7 +50,7 @@
         {
           "icon": "./assets/notification-icon.png",
           "color": "#ffffff"
-      }
+        }
       ]
     ],
     "experiments": {

@@ -1,8 +1,14 @@
 import { Entypo } from "@expo/vector-icons";
-import React, { useCallback, useMemo, useState } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useMemo,
+  useState,
+} from "react";
 import { View, Text, TextInput, useColorScheme } from "react-native";
 import { Divider } from "@rneui/base";
-import { UserProps } from "@/types";
+import { Message, UserProps } from "@/types";
 import PotentialChat from "./PotentialChat";
 import {
   BottomSheetSectionList,
@@ -11,8 +17,14 @@ import {
 
 const NewChatsModal = ({
   potentialChats,
+  setRecipientId,
+  setChatId,
+  setMessages,
 }: {
   potentialChats: UserProps[] | null;
+  setRecipientId: Dispatch<SetStateAction<string | null>>;
+  setChatId: Dispatch<SetStateAction<string | null>>;
+  setMessages: Dispatch<SetStateAction<Message[] | null>>;
 }) => {
   const colorScheme = useColorScheme();
   const [search, setSearch] = useState("");
@@ -23,13 +35,19 @@ const NewChatsModal = ({
   }, []);
 
   const filteredChats = useMemo(() => {
-    if (!potentialChats) return { students: [], lecturers: [], HODs: [] };
+    if (!potentialChats) {
+      return { students: [], lecturers: [], HODs: [] };
+    }
 
     return potentialChats.reduce(
       (acc, user) => {
-        if (user.role === "student") acc.students.push(user);
-        else if (user.role === "lecturer") acc.lecturers.push(user);
-        else if (user.role === "HOD") acc.HODs.push(user);
+        if (user.role === "student") {
+          acc.students.push(user);
+        } else if (user.role === "lecturer") {
+          acc.lecturers.push(user);
+        } else if (user.role === "HOD") {
+          acc.HODs.push(user);
+        }
         return acc;
       },
       { students: [], lecturers: [], HODs: [] } as {
@@ -145,6 +163,9 @@ const NewChatsModal = ({
             id={item._id}
             dismiss={dismiss}
             photo={item?.photoUrl as string}
+            setChatId={setChatId}
+            setRecipientId={setRecipientId}
+            setMessages={setMessages}
           />
         )}
         renderSectionHeader={({ section: { title } }) => (
