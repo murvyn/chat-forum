@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import ChatBottomBar from "./ChatBottomBar";
 import { useChat } from "@/contexts/ChatContext";
 import { getFormattedTime, getInitials } from "@/utils/helpers";
@@ -14,12 +14,15 @@ import {
   ChatBubbleMessage,
   ChatBubbleTimestamp,
 } from "./chat-bubble";
+import MediaViewer from "../MediaViewer";
 // import { FaLock } from "react-icons/fa";
 
 const getMessageVariant = (isUser: boolean) => (isUser ? "sent" : "received");
 
 export function ChatList() {
   const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const [showMedia, setShowMedia] = useState(false)
+  const [selectedImage, setSelectedImage] = useState<{url: string, type: "image" | "video"} | null>(null);
   const {
     messageLoading,
     retrySendMessage,
@@ -66,7 +69,13 @@ export function ChatList() {
   }, [chatId]);
 
   return (
-    <div className="w-full  overflow-y-hidden overflow-x-hidden h-full flex flex-col">
+    <>
+     {showMedia && selectedImage && (
+      <AnimatePresence>
+        <MediaViewer message={selectedImage} onClose={() => setShowMedia(false)} />
+      </AnimatePresence>
+    )}
+    <div className="w-full overflow-y-hidden overflow-x-hidden h-full flex flex-col">
       {messageLoading ? (
         <div className="w-full overflow-y-auto overflow-x-hidden h-full flex flex-col justify-center">
           <Spinner />
@@ -102,7 +111,9 @@ export function ChatList() {
                 }
                 const isSending = sendMessageLoading[message._id] || false;
                 const variant = getMessageVariant(isCurrentUser);
+                const isMedia = message.type === "image" || message.type === "video";
                 return (
+                  <>
                   <motion.div
                     key={message._id}
                     layout
@@ -136,9 +147,13 @@ export function ChatList() {
                         </button>
                       )}
                       <ChatBubbleMessage
-                        className=""
+                         onClick={() => {
+                          if (isMedia) {
+                            setSelectedImage({url: message.text, type: message.type as 'image' | 'video'});
+                            setShowMedia(true);
+                          }}}
                         isMedia={
-                          message.type === "image" || message.type === "video"
+                          isMedia
                         }
                         variant={variant}
                         isLoading={isSending}
@@ -155,6 +170,7 @@ export function ChatList() {
                       </ChatBubbleMessage>
                     </ChatBubble>
                   </motion.div>
+                        </>
                 );
               })}
             </AnimatePresence>
@@ -163,5 +179,6 @@ export function ChatList() {
       )}
       <ChatBottomBar />
     </div>
+    </>
   );
 }
