@@ -139,7 +139,7 @@ const UserChats = ({ chatId, user, label, latestMessage }: Props) => {
                       <span
                         className={`${
                           latestMessage ? "truncate" : ""
-                        } max-w-[4rem] text-start`}
+                        } max-w-[100px] text-start`}
                       >
                         {latestMessage ? (
                           <LatestMessage message={latestMessage} />
@@ -159,13 +159,19 @@ const UserChats = ({ chatId, user, label, latestMessage }: Props) => {
               </Link>
             </div>
           </Button>
-          <TooltipContent
-            side="right"
-            align="start"
-            className="max-w-lg text-start"
-          >
-            {latestMessage ? <LatestMessage message={latestMessage} /> : label}
-          </TooltipContent>
+          {pathname !== `/direct-messages/${user?._id}` && (
+            <TooltipContent
+              side="right"
+              align="start"
+              className="max-w-lg text-start"
+            >
+              {latestMessage ? (
+                <LatestMessage message={latestMessage} />
+              ) : (
+                label
+              )}
+            </TooltipContent>
+          )}
         </TooltipTrigger>
       </Tooltip>
     </TooltipProvider>

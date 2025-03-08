@@ -109,7 +109,7 @@ const ChannelChats = ({ chatId, name, latestMessage }: Props) => {
                       <span
                         className={`${
                           latestMessage ? "truncate" : ""
-                        } max-w-[4rem] text-start`}
+                        } max-w-[100px] text-start`}
                       >
                         {latestMessage ? (
                           <LatestMessage message={latestMessage} />
@@ -129,13 +129,15 @@ const ChannelChats = ({ chatId, name, latestMessage }: Props) => {
               </Link>
             </div>
           </Button>
+          {pathname === `/channels/${chatId}` &&
           <TooltipContent
-            side="right"
-            align="start"
-            className="max-w-lg text-start"
+          side="right"
+          align="start"
+          className="max-w-lg text-start"
           >
             {latestMessage ? <LatestMessage message={latestMessage} /> : name}
           </TooltipContent>
+          }
         </TooltipTrigger>
       </Tooltip>
     </TooltipProvider>
