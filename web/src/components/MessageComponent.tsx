@@ -4,9 +4,11 @@ import AudioPlayer from "./AudioPlayer";
 const MessageComponent = ({
   type,
   text,
+  isUser
 }: {
   type: "text" | "document" | "audio" | "video" | "image";
   text: string;
+  isUser: boolean
 }) => {
   return useMemo(() => {
     switch (type) {
@@ -23,7 +25,7 @@ const MessageComponent = ({
       case "video":
         return (
           <video
-            className="max-h-96 rounded-t-lg rounded-br-lg shadow-lg"
+            className={`max-h-96 rounded-t-lg ${isUser ? "rounded-bl-lg" : "rounded-br-lg" } shadow-lg`}
             src={text}
             onError={(e) => {
               console.error("Error loading video", e);
@@ -34,7 +36,7 @@ const MessageComponent = ({
       case "image":
         return (
           <img
-            className="max-h-96 rounded-t-lg rounded-br-lg shadow-lg"
+            className={`max-h-96 rounded-t-lg ${isUser ? "rounded-bl-lg" : "rounded-br-lg" } shadow-lg`}
             src={text}
             alt="Image message"
             onError={() => {

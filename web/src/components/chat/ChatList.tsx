@@ -162,6 +162,7 @@ export function ChatList() {
                           <MessageComponent
                             type={message.type}
                             text={message.text}
+                            isUser={isCurrentUser}
                           />
                         </div>
                         {formattedTime && (
