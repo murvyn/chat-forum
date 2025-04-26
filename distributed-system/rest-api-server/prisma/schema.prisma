@@ -1,0 +1,103 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ===== ENUMS =====
+
+enum Role {
+  student
+  lecturer
+  HOD
+}
+
+// ===== MODELS =====
+
+model User {
+  id          Int    @id @default(autoincrement())
+  firstName   String @db.VarChar(50)
+  lastName    String @db.VarChar(50)
+  email       String @unique @db.VarChar(255)
+  indexNumber String @unique @db.VarChar(10)
+  password    String @db.VarChar(1024)
+  role        Role
+
+  departmentId Int?
+  department   Department? @relation("DepartmentMembers", fields: [departmentId], references: [id])
+
+  // lecturerIn   Department? @relation("DepartmentLecturers", fields: [departmentId], references: [id], map: "User_departmentId_lecturerIn_fkey")
+
+  headOfDepartment Department? @relation("DepartmentHead")
+
+  programId Int?
+  program   Program? @relation(fields: [programId], references: [id])
+
+  courses CourseEnrollment[] // If student
+
+  teaches Course? @relation("LecturerTeachesCourse")
+
+  online    Boolean   @default(false)
+  lastSeen  DateTime?
+  photoUrl  String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Department {
+  id     Int    @id @default(autoincrement())
+  name   String @unique @db.VarChar(50)
+  headId Int?   @unique
+  head   User?  @relation("DepartmentHead", fields: [headId], references: [id])
+
+  programs Program[]
+  // lecturers  User[]    @relation("DepartmentLecturers")
+  members  User[]    @relation("DepartmentMembers")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Program {
+  id           Int        @id @default(autoincrement())
+  name         String     @unique @db.VarChar(100)
+  departmentId Int
+  department   Department @relation(fields: [departmentId], references: [id])
+
+  courses  Course[]
+  students User[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Course {
+  id        Int     @id @default(autoincrement())
+  name      String  @db.VarChar(255)
+  programId Int
+  program   Program @relation(fields: [programId], references: [id])
+
+  lecturerId Int  @unique // 👈 Lecturer can only teach ONE course (UNIQUE constraint)
+  lecturer   User @relation("LecturerTeachesCourse", fields: [lecturerId], references: [id])
+
+  enrolledStudents CourseEnrollment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CourseEnrollment {
+  id        Int @id @default(autoincrement())
+  studentId Int
+  courseId  Int
+
+  student User   @relation(fields: [studentId], references: [id])
+  course  Course @relation(fields: [courseId], references: [id])
+
+  enrolledAt DateTime @default(now())
+
+  @@unique([studentId, courseId]) // 👈 Prevent same student enrolling twice for same course
+}
